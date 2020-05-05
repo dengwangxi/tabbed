@@ -33,6 +33,9 @@ Features
 Installation
 ------------
 
+Arch linux: copy tabbed to /usr/lib/urxvt/perl to replace the original installed file.
+
+
 Copy tabbed into ``~/.urxvt/ext`` directory.
 
 Add these to your ``~/.Xdefaults``::
