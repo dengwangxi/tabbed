@@ -143,7 +143,8 @@ sub refresh {
    if ($self->{new_button}) {
       substr $text, 0, 7, "[NEW] |";
       @$rend[0 .. 5] = ($self->{rs_tab}) x 6;
-      push @ofs, [0, 6, -1 ];
+      #push @ofs, [0, 6, -1 ];
+      push @ofs, [0, 6, sub { $_[0]->new_tab } ];
       $ofs = 7;
    }
 
@@ -390,10 +391,10 @@ sub on_init {
    my $actives = $self->x_resource ("actives-fg");
    my $actived = $self->x_resource ("actived-fg");
 
-   defined $fg      or $fg      = 8;
+   defined $fg      or $fg      = 3;
    defined $bg      or $bg      = 0;
-   defined $tabfg   or $tabfg   = 15;
-   defined $tabbg   or $tabbg   = 8;
+   defined $tabfg   or $tabfg   = 0;
+   defined $tabbg   or $tabbg   = 1;
    defined $active  or $active  = 1;
    defined $actives or $actives = 5;
    defined $actived or $actived = 4;
